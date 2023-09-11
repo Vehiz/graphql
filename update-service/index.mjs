@@ -1,6 +1,7 @@
 import { ApolloServer } from "apollo-server";
 import { typeDefs, resolvers } from "./graphql/def-services.mjs";
 import chokidar from 'chokidar'
+import '../graphql-auth-service/graphql/schema.mjs'
 
 
 const port = 4001
@@ -12,7 +13,7 @@ const watcher = chokidar.watch('./schema', {
 });
 
 watcher.on('change', () => {
-  const updatedSchema = gql(fs.readFileSync('graphql-auth-service/graphql/schema.mjs', 'utf8'));
+  const updatedSchema = gql(fs.readFileSync('../graphql-auth-service/graphql/schema.mjs', 'utf8'));
   server.updateSchema(updatedSchema);
 });
 
