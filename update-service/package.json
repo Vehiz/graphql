@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "apollo-server": "^3.12.1",
+    "chokidar": "^3.5.3",
     "dotenv": "^16.3.1",
     "graphql": "^16.8.0",
     "mongoose": "^7.5.0",
